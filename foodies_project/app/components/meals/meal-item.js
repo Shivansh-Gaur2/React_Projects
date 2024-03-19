@@ -9,6 +9,11 @@ export default function MealItem({ title, slug, image, summary, creator }) {
       <header>
         <div className={classes.image}>
           <Image src={image} alt={title} fill />
+          {/* nextJs will not be able to detect
+           width and height of the image so we
+            use fill to fill the container */}
+{/* 
+            fill is great alternative to set width and height */}
         </div>
         <div className={classes.headerText}>
           <h2>{title}</h2>
