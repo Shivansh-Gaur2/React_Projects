@@ -3,6 +3,18 @@ import Image from 'next/image'
 import { getMeal } from '@/lib.js/meals'
 import { notFound } from 'next/navigation';
 
+
+export async function generateMetaData({params}){
+  const meal = getMeal(params.mealSlug);
+
+  if(!meal){
+    notFound(); // this will show closest error page   
+  }
+  return{
+    title: meal.title,
+    description: meal.summary
+  }
+}
 export default function MealDetailsPage({params}) {
 
   const meal = getMeal(params.mealSlug);

@@ -1,3 +1,5 @@
+'use client';
+
 import ImagePicker from '@/app/components/meals/image-picker';
 import classes from './page.module.css';
 import { shareMeal } from '@/lib.js/actions.js';
@@ -45,6 +47,7 @@ export default function ShareMealPage() {
             ></textarea>
           </p>
           <ImagePicker label={'Your Image'} name={'image'} />
+          {state.message && <p>{state.message}</p>}
           <p className={classes.actions}>
             <MealsFormSubmit />
           </p>
